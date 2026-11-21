@@ -1,10 +1,11 @@
-#!/usr/bin/env bash
+#!/data/user/0/com.termux/files/usr/bin/bash
 # Roz news fetch karein, pages banayein aur (agar repo set ho) GitHub par push karein.
 # Cron isi script ko chalata hai. Log: logs/publish.log
 set -uo pipefail
 
 SITE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$SITE_DIR" || exit 1
+[[ -f "$SITE_DIR/config.sh" ]] && source "$SITE_DIR/config.sh"
 mkdir -p logs
 
 echo "===== $(date '+%Y-%m-%d %H:%M:%S %Z') =====" >> logs/publish.log

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/data/user/0/com.termux/files/usr/bin/python3
 """
 Hindi news site generator.
 Google News (Hindi) RSS feeds se khabre laakar static HTML pages banata hai:
