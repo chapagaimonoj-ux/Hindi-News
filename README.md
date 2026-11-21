@@ -1,5 +1,9 @@
 # खबर 24 — Hindi News Website (auto update)
 
+**🔴 LIVE:** https://chapagaimonoj-ux.github.io/Hindi-News/
+
+GitHub Pages पर host है — Vercel की zarurat nahi.
+
 एक completamente free, statically-generated हिंदी न्यूज़ साइट जो Google News (Hindi) RSS से खबरें लाती है और रोज़ अपने आप नए पेज बनाती है।
 
 ## क्या-क्या है
