@@ -1,4 +1,4 @@
-# खबर 24 — Hindi News Website (auto update)
+# खबर संसार — Hindi News Website (auto update)
 
 **🔴 LIVE:** https://chapagaimonoj-ux.github.io/Hindi-News/
 

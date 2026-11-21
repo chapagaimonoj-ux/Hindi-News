@@ -24,8 +24,8 @@ if [[ "${AUTO_PUSH:-0}" == "1" ]] && git remote get-url origin >/dev/null 2>&1; 
   git add -A
   if ! git diff --cached --quiet; then
     git commit -m "News update $(date '+%Y-%m-%d %H:%M')" >> logs/publish.log 2>&1
-    # Pages abhi gh-pages branch serve kar raha hai — dono branches update karte hain.
-    if git push origin main gh-pages >> logs/publish.log 2>&1; then
+    # GitHub Pages ab main branch serve karta hai.
+    if git push origin main >> logs/publish.log 2>&1; then
       echo "PUSH OK — GitHub Pages auto-rebuild chalega." >> logs/publish.log
     else
       echo "PUSH FAILED — check git credentials/token." >> logs/publish.log
