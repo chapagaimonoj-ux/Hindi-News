@@ -185,7 +185,8 @@ def collect() -> list[dict]:
         count = 0
         for node in feed_items:
             title = clean_text(node["title"])
-            # Google News अक्सर अंत में " -Times of India" लगा देता है
+            # Google News अक्सर अंत में " -Times of India" या अंग्रेज़ी अनुवाद लगा देता है
+            title = re.sub(r"\s+[-–—]\s+(?=[A-Za-z])[^\-–—]{15,}$", "", title).strip()
             title = re.sub(r"\s+[-–—]\s+[^\-–—]{2,40}$", "", title).strip()
             link = node["link"].strip()
             if not title or not link or count >= PER_CATEGORY:
