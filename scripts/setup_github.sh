@@ -6,8 +6,11 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$DIR"
 
 echo "=== GitHub setup ==="
-read -rp "GitHub username: " USERNAME
-read -rp "Repo name (e.g. hindi-news): " REPO
+USERNAME="${GITHUB_USER:-}"
+REPO="${GITHUB_REPO:-}"
+[[ -z "$USERNAME" ]] && read -rp "GitHub username: " USERNAME
+[[ -z "$REPO" ]] && read -rp "Repo name (e.g. hindi-news): " REPO
+echo "Username: $USERNAME | Repo: $REPO"
 read -rsp "Personal Access Token (likhte waqt nahi dikhega): " TOKEN
 echo ""
 read -rp "Vercel URL (abhi nahi hai to bas Enter dabayein): " SITE_URL
