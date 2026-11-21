@@ -25,7 +25,10 @@ if [[ -z "$TOKEN" ]]; then
   echo "Token khali hai — setup rok diya gaya." >&2
   exit 1
 fi
-read -rp "Vercel URL (abhi nahi hai to bas Enter dabayein): " SITE_URL
+SITE_URL="${VERCEL_URL:-}"
+if [[ -z "$SITE_URL" ]]; then
+  read -rp "Vercel URL (abhi nahi hai to bas Enter dabayein): " SITE_URL
+fi
 SITE_URL="${SITE_URL:-https://example.vercel.app}"
 
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
