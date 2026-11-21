@@ -49,6 +49,46 @@ QUERIES = {
 }
 CATEGORIES = list(QUERIES)
 
+# Google News RSS me images nahi hote — har category ke liye real photos (Unsplash).
+CATEGORY_IMAGES = {
+    "देश": [
+        "https://images.unsplash.com/photo-1587474260584-136574528ed5",
+        "https://images.unsplash.com/photo-1504711434969-e33886168f5c",
+    ],
+    "दुनिया": [
+        "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1",
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
+    ],
+    "राजनीति": [
+        "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620",
+        "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c",
+    ],
+    "खेल": [
+        "https://images.unsplash.com/photo-1531415074968-036ba1b575da",
+        "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+    ],
+    "मनोरंजन": [
+        "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
+        "https://images.unsplash.com/photo-1478720568477-152d9b164e26",
+    ],
+    "व्यापार": [
+        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3",
+        "https://images.unsplash.com/photo-1554224155-6726b3ff858f",
+    ],
+    "टेक्नोलॉजी": [
+        "https://images.unsplash.com/photo-1518770660439-4636190af475",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    ],
+}
+
+
+def category_image(category: str, title: str) -> str:
+    pool = CATEGORY_IMAGES.get(category, [])
+    if not pool:
+        return ""
+    index = int(hashlib.md5(title.encode("utf-8")).hexdigest(), 16) % len(pool)
+    return pool[index] + "?auto=format&fit=crop&w=800&q=70"
+
 UA = "Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 Chrome/120 Mobile Safari/537.36"
 
 
@@ -214,7 +254,7 @@ def collect() -> list[dict]:
                     "source": source,
                     "published": published.isoformat(),
                     "time_label": human_time(published),
-                    "image": node["image"],
+                    "image": node["image"] or category_image(category, title),
                     "summary": make_summary(title, node["description"], source),
                     "slug": slug_for(title),
                 }
@@ -235,6 +275,10 @@ PAGE_HEAD = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#c62828">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="खबर संसार">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>{{TITLE}} | {{SITE_NAME}}</title>
 <meta name="description" content="{{META_DESC}}">
 <link rel="canonical" href="{{CANONICAL}}">
@@ -242,6 +286,10 @@ PAGE_HEAD = """<!doctype html>
 <meta property="og:title" content="{{TITLE}} | {{SITE_NAME}}">
 <meta property="og:description" content="{{META_DESC}}">
 <meta property="og:url" content="{{CANONICAL}}">
+<meta property="og:image" content="{{SITE_URL}}/icon-512.png">
+<link rel="manifest" href="{{BASE}}manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="{{BASE}}icon-192.png">
+<link rel="apple-touch-icon" href="{{BASE}}apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -255,9 +303,16 @@ PAGE_HEAD = """<!doctype html>
       <a href="{{BASE}}index.html">मुख्य पृष्ठ</a>
       {{NAV_LINKS}}
     </nav>
-    <button class="menu-btn" id="menuBtn" aria-label="मेन्यू">☰</button>
+    <div class="header-actions">
+      <button class="install-btn" id="installBtn" aria-label="ऐप लगाएँ">📲 <span>ऐप लगाएँ</span></button>
+      <button class="menu-btn" id="menuBtn" aria-label="मेन्यू">☰</button>
+    </div>
   </div>
 </header>
+<div class="install-hint" id="installHint" role="status" hidden>
+  <span id="installHintText">ऐप लगाने के लिए ब्राउज़र मेन्यू (⋮) से “Add to Home screen” चुनें।</span>
+  <button id="installHintClose" aria-label="बंद करें">×</button>
+</div>
 """
 
 FOOTER = """
@@ -301,7 +356,8 @@ def inject_ads(page: str, ads: dict) -> str:
 
 def nav_links() -> str:
     return "".join(
-        f'<a href="index.html#{cat}">{cat}</a>' for cat in CATEGORIES[:5]
+        f'<a href="#tabs" data-cat="{html.escape(cat)}">{html.escape(cat)}</a>'
+        for cat in CATEGORIES[:5]
     )
 
 

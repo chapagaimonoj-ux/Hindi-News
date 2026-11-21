@@ -10,9 +10,9 @@ mkdir -p logs
 
 echo "===== $(date '+%Y-%m-%d %H:%M:%S %Z') =====" >> logs/publish.log
 
-# SITE_URL apne Vercel domain ke hisaab se set karein (README dekhen).
-export SITE_URL="${SITE_URL:-https://example.vercel.app}"
-export SITE_NAME="${SITE_NAME:-खबर 24}"
+# SITE_URL / SITE_NAME config.sh se aate hain (README dekhen).
+export SITE_URL="${SITE_URL:-https://example.github.io/Hindi-News}"
+export SITE_NAME="${SITE_NAME:-खबर संसार}"
 
 if ! python3 scripts/fetch_news.py >> logs/publish.log 2>&1; then
   echo "FETCH FAILED — purane pages safe hain." >> logs/publish.log

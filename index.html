@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#c62828">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="खबर संसार">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>ताज़ा हिंदी समाचार | खबर संसार</title>
 <meta name="description" content="आज की ताज़ा हिंदी खबरें — देश, दुनिया, राजनीति, खेल, मनोरंजन और व्यापार।">
 <link rel="canonical" href="https://chapagaimonoj-ux.github.io/Hindi-News/">
@@ -11,6 +15,10 @@
 <meta property="og:title" content="ताज़ा हिंदी समाचार | खबर संसार">
 <meta property="og:description" content="आज की ताज़ा हिंदी खबरें — देश, दुनिया, राजनीति, खेल, मनोरंजन और व्यापार।">
 <meta property="og:url" content="https://chapagaimonoj-ux.github.io/Hindi-News/">
+<meta property="og:image" content="https://chapagaimonoj-ux.github.io/Hindi-News/icon-512.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,24 +30,31 @@
     <a class="brand" href="index.html"><span class="brand-mark">ख</span><span>खबर संसार</span></a>
     <nav class="nav" id="nav">
       <a href="index.html">मुख्य पृष्ठ</a>
-      <a href="index.html#देश">देश</a><a href="index.html#दुनिया">दुनिया</a><a href="index.html#राजनीति">राजनीति</a><a href="index.html#खेल">खेल</a><a href="index.html#मनोरंजन">मनोरंजन</a>
+      <a href="#tabs" data-cat="देश">देश</a><a href="#tabs" data-cat="दुनिया">दुनिया</a><a href="#tabs" data-cat="राजनीति">राजनीति</a><a href="#tabs" data-cat="खेल">खेल</a><a href="#tabs" data-cat="मनोरंजन">मनोरंजन</a>
     </nav>
-    <button class="menu-btn" id="menuBtn" aria-label="मेन्यू">☰</button>
+    <div class="header-actions">
+      <button class="install-btn" id="installBtn" aria-label="ऐप लगाएँ">📲 <span>ऐप लगाएँ</span></button>
+      <button class="menu-btn" id="menuBtn" aria-label="मेन्यू">☰</button>
+    </div>
   </div>
 </header>
+<div class="install-hint" id="installHint" role="status" hidden>
+  <span id="installHintText">ऐप लगाने के लिए ब्राउज़र मेन्यू (⋮) से “Add to Home screen” चुनें।</span>
+  <button id="installHintClose" aria-label="बंद करें">×</button>
+</div>
 
 <div class="wrap">
-  <div class="ticker"><span class="ticker-label">BREAKING</span><div class="ticker-scroll"><span>बॉलीवुड एक्ट्रेस कियारा आडवाणी मुंबई में पति सिद्धार्थ मल्होत्रा के साथ स्पॉट हुईं. दोनों को शहर में एक साथ देखा गया. सामने आए विजुअल्स में कियारा और सिद्धार्थ की मौजूदगी नजर आ रही है.</span><span class="dot">•</span><span>राजस्थान की ग्रामीण राजनीति में कांग्रेस का दबदबा, परिषद से लेकर पंचायत समिति तक बीजेपी हारी; जानें 3 वजहें</span></div></div>
-  <div class="section-head"><h2>आज की खबरें</h2><span class="updated">अपडेट: 21 Nov 2026, 10:35 AM</span></div>
+  <div class="ticker"><span class="ticker-label">BREAKING</span><div class="ticker-scroll"><span>ओवरसीज में बॉलीवुड की टॉप 10 हाईएस्ट ग्रॉसिंग फिल्में, जानें- कौन से नंबर पर है रामायण ?</span><span class="dot">•</span><span>हेमांग-जोशी ने सपा पर गुंडाराज की राजनीति का आरोप लगाया: बोले- अखिलेश जेसीबी हादसे के पीड़ित परिवार से माफी...</span></div></div>
+  <div class="section-head"><h2>आज की खबरें</h2><span class="updated">अपडेट: 21 Nov 2026, 12:00 PM</span></div>
   <!-- ADSENSE_TOP: अपना AdSense <script> कोड यहाँ paste करें -->
   <section class="hero" id="top">
-  <a class="hero-image" href="news/kdf8798965e.html"><div class="no-image">ख</div></a>
+  <a class="hero-image" href="news/k946c3159d3.html"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" onerror="this.style.display='none'"></a>
   <div class="hero-content">
     <span class="badge badge-lg">ताज़ा खबर • मनोरंजन</span>
-    <h1><a href="news/kdf8798965e.html">बॉलीवुड एक्ट्रेस कियारा आडवाणी मुंबई में पति सिद्धार्थ मल्होत्रा के साथ स्पॉट हुईं. दोनों को शहर में एक साथ देखा गया. सामने आए विजुअल्स में कियारा और सिद्धार्थ की मौजूदगी नजर आ रही है.</a></h1>
-    <p>बॉलीवुड एक्ट्रेस कियारा आडवाणी मुंबई में पति सिद्धार्थ मल्होत्रा के साथ स्पॉट हुईं. दोनों को शहर में एक साथ देखा गया. सामने आए विजुअल्स में कियारा और सिद्धार्थ की मौजूदगी नजर आ रही है. — यह खबर Facebook द्वारा दी गई जानकारी पर आधा</p>
-    <div class="meta"><span>Facebook</span><span class="dot">•</span><span>11 मिनट पहले</span></div>
-    <a class="btn" href="news/kdf8798965e.html">पूरी खबर पढ़ें →</a>
+    <h1><a href="news/k946c3159d3.html">ओवरसीज में बॉलीवुड की टॉप 10 हाईएस्ट ग्रॉसिंग फिल्में, जानें- कौन से नंबर पर है रामायण ?</a></h1>
+    <p>ओवरसीज में बॉलीवुड की टॉप 10 हाईएस्ट ग्रॉसिंग फिल्में, जानें- कौन से नंबर पर है रामायण ? — यह खबर ABP News द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्रोत पर जाएँ।</p>
+    <div class="meta"><span>ABP News</span><span class="dot">•</span><span>34 मिनट पहले</span></div>
+    <a class="btn" href="news/k946c3159d3.html">पूरी खबर पढ़ें →</a>
   </div>
 </section>
   <div class="main-grid">
@@ -47,97 +62,151 @@
       <div class="tabs" id="tabs"><button class="tab active" data-filter="सभी">सभी</button><button class="tab" data-filter="देश">देश</button><button class="tab" data-filter="दुनिया">दुनिया</button><button class="tab" data-filter="राजनीति">राजनीति</button><button class="tab" data-filter="खेल">खेल</button><button class="tab" data-filter="मनोरंजन">मनोरंजन</button><button class="tab" data-filter="व्यापार">व्यापार</button><button class="tab" data-filter="टेक्नोलॉजी">टेक्नोलॉजी</button></div>
       <div class="card-grid" id="cardGrid">
 <article class="card" data-category="राजनीति">
-  <a class="card-image" href="news/kab5be8720b.html"><div class="no-image">ख</div><span class="badge">राजनीति</span></a>
+  <a class="card-image" href="news/kd926ae5e64.html"><img src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">राजनीति</span></a>
   <div class="card-body">
-    <div class="meta"><span>Navbharat Live</span><span class="dot">•</span><span>39 मिनट पहले</span></div>
+    <div class="meta"><span>Dainik Bhaskar</span><span class="dot">•</span><span>44 मिनट पहले</span></div>
+    <h3><a href="news/kd926ae5e64.html">हेमांग-जोशी ने सपा पर गुंडाराज की राजनीति का आरोप लगाया: बोले- अखिलेश जेसीबी हादसे के पीड़ित परिवार से माफी...</a></h3>
+    <p>हेमांग-जोशी ने सपा पर गुंडाराज की राजनीति का आरोप लगाया: बोले- अखिलेश जेसीबी हादसे के पीड़ित परिवार से माफी... — यह खबर Dainik Bhaskar द्वारा दी गई जा</p>
+    <a class="read-more" href="news/kd926ae5e64.html">पढ़ें →</a>
+  </div>
+</article>
+<article class="card" data-category="देश">
+  <a class="card-image" href="news/k24f157852c.html"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">देश</span></a>
+  <div class="card-body">
+    <div class="meta"><span>News On AIR</span><span class="dot">•</span><span>46 मिनट पहले</span></div>
+    <h3><a href="news/k24f157852c.html">पश्चिम त्रिपुरा जिले में भारत-बांग्लादेश अंतरराष्ट्रीय सीमा से सटे क्षेत्रों में रात के समय लोगों की आवाजाही पर प्रतिबंध</a></h3>
+    <p>पश्चिम त्रिपुरा जिले में भारत-बांग्लादेश अंतरराष्ट्रीय सीमा से सटे क्षेत्रों में रात के समय लोगों की आवाजाही पर प्रतिबंध — यह खबर News On AIR द्वारा द</p>
+    <a class="read-more" href="news/k24f157852c.html">पढ़ें →</a>
+  </div>
+</article>
+<article class="card" data-category="राजनीति">
+  <a class="card-image" href="news/k949aa7a97e.html"><img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">राजनीति</span></a>
+  <div class="card-body">
+    <div class="meta"><span>ABP News</span><span class="dot">•</span><span>1 घंटे पहले</span></div>
+    <h3><a href="news/k949aa7a97e.html">भारत में कारोबार करें, राजनीति नहीं, META पर क्यों भड़के अखिलेश यादव?</a></h3>
+    <p>भारत में कारोबार करें, राजनीति नहीं, META पर क्यों भड़के अखिलेश यादव? — यह खबर ABP News द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्रोत पर जा</p>
+    <a class="read-more" href="news/k949aa7a97e.html">पढ़ें →</a>
+  </div>
+</article>
+<article class="card" data-category="व्यापार">
+  <a class="card-image" href="news/k312dc3b09e.html"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">व्यापार</span></a>
+  <div class="card-body">
+    <div class="meta"><span>Vietnam.vn</span><span class="dot">•</span><span>1 घंटे पहले</span></div>
+    <h3><a href="news/k312dc3b09e.html">ब्याज दरों के दबाव और शेयर बाजार में भारी बिकवाली के कारण सोने की कीमतें 14 महीनों के निचले स्तर पर आ गईं।</a></h3>
+    <p>ब्याज दरों के दबाव और शेयर बाजार में भारी बिकवाली के कारण सोने की कीमतें 14 महीनों के निचले स्तर पर आ गईं। — यह खबर Vietnam.vn द्वारा दी गई जानकारी पर</p>
+    <a class="read-more" href="news/k312dc3b09e.html">पढ़ें →</a>
+  </div>
+</article>
+<article class="card" data-category="मनोरंजन">
+  <a class="card-image" href="news/kae01f1912a.html"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">मनोरंजन</span></a>
+  <div class="card-body">
+    <div class="meta"><span>AajTak</span><span class="dot">•</span><span>1 घंटे पहले</span></div>
+    <h3><a href="news/kae01f1912a.html">Om Box Office Collection: धनुष की नई फिल्म ने पहले दिन ही दिखाया दम, तोड़ा अपना ही पुराना रिकॉर्ड, मिली सबसे बड़ी ओपनिंग</a></h3>
+    <p>Om Box Office Collection: धनुष की नई फिल्म ने पहले दिन ही दिखाया दम, तोड़ा अपना ही पुराना रिकॉर्ड, मिली सबसे बड़ी ओपनिंग — यह खबर AajTak द्वारा दी गई </p>
+    <a class="read-more" href="news/kae01f1912a.html">पढ़ें →</a>
+  </div>
+</article>
+<article class="card" data-category="मनोरंजन">
+  <a class="card-image" href="news/kdf8798965e.html"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">मनोरंजन</span></a>
+  <div class="card-body">
+    <div class="meta"><span>Facebook</span><span class="dot">•</span><span>1 घंटे पहले</span></div>
+    <h3><a href="news/kdf8798965e.html">बॉलीवुड एक्ट्रेस कियारा आडवाणी मुंबई में पति सिद्धार्थ मल्होत्रा के साथ स्पॉट हुईं. दोनों को शहर में एक साथ देखा गया. सामने आए विजुअल्स में कियारा और सिद्धार्थ की मौजूदगी नजर आ रही है.</a></h3>
+    <p>बॉलीवुड एक्ट्रेस कियारा आडवाणी मुंबई में पति सिद्धार्थ मल्होत्रा के साथ स्पॉट हुईं. दोनों को शहर में एक साथ देखा गया. सामने आए विजुअल्स में कियारा और </p>
+    <a class="read-more" href="news/kdf8798965e.html">पढ़ें →</a>
+  </div>
+</article>
+<article class="card" data-category="राजनीति">
+  <a class="card-image" href="news/kab5be8720b.html"><img src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">राजनीति</span></a>
+  <div class="card-body">
+    <div class="meta"><span>Navbharat Live</span><span class="dot">•</span><span>2 घंटे पहले</span></div>
     <h3><a href="news/kab5be8720b.html">राजस्थान की ग्रामीण राजनीति में कांग्रेस का दबदबा, परिषद से लेकर पंचायत समिति तक बीजेपी हारी; जानें 3 वजहें</a></h3>
     <p>राजस्थान की ग्रामीण राजनीति में कांग्रेस का दबदबा, परिषद से लेकर पंचायत समिति तक बीजेपी हारी; जानें 3 वजहें — यह खबर Navbharat Live द्वारा दी गई जानका</p>
     <a class="read-more" href="news/kab5be8720b.html">पढ़ें →</a>
   </div>
 </article>
-<article class="card" data-category="मनोरंजन">
-  <a class="card-image" href="news/kd87569b12a.html"><div class="no-image">ख</div><span class="badge">मनोरंजन</span></a>
+<article class="card" data-category="देश">
+  <a class="card-image" href="news/k00da2be83b.html"><img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">देश</span></a>
   <div class="card-body">
-    <div class="meta"><span>Navbharat Live</span><span class="dot">•</span><span>1 घंटे पहले</span></div>
+    <div class="meta"><span>www.presidentofindia.gov.in</span><span class="dot">•</span><span>2 घंटे पहले</span></div>
+    <h3><a href="news/k00da2be83b.html">भारत की राष्ट्रपति श्रीमती द्रौपदी मुर्मु का श्री राम कॉलेज ऑफ कॉमर्स के शताब्दी समारोह के समापन पर संबोधन (HINDI)</a></h3>
+    <p>भारत की राष्ट्रपति श्रीमती द्रौपदी मुर्मु का श्री राम कॉलेज ऑफ कॉमर्स के शताब्दी समारोह के समापन पर संबोधन (HINDI) — यह खबर www.presidentofindia.gov.i</p>
+    <a class="read-more" href="news/k00da2be83b.html">पढ़ें →</a>
+  </div>
+</article>
+<article class="card" data-category="मनोरंजन">
+  <a class="card-image" href="news/k645ecc0a18.html"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">मनोरंजन</span></a>
+  <div class="card-body">
+    <div class="meta"><span>pib.gov.in</span><span class="dot">•</span><span>2 घंटे पहले</span></div>
+    <h3><a href="news/k645ecc0a18.html">राष्ट्रीय फिल्म पुरस्कार</a></h3>
+    <p>राष्ट्रीय फिल्म पुरस्कार — यह खबर pib.gov.in द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्रोत पर जाएँ।</p>
+    <a class="read-more" href="news/k645ecc0a18.html">पढ़ें →</a>
+  </div>
+</article>
+<article class="card" data-category="मनोरंजन">
+  <a class="card-image" href="news/kd87569b12a.html"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">मनोरंजन</span></a>
+  <div class="card-body">
+    <div class="meta"><span>Navbharat Live</span><span class="dot">•</span><span>2 घंटे पहले</span></div>
     <h3><a href="news/kd87569b12a.html">गोवा में 57वें अंतरराष्ट्रीय फिल्म महोत्सव IFFI का भव्य आगाज, रवि किशन और प्रमोद सावंत ने किया उद्घाटन</a></h3>
     <p>गोवा में 57वें अंतरराष्ट्रीय फिल्म महोत्सव IFFI का भव्य आगाज, रवि किशन और प्रमोद सावंत ने किया उद्घाटन — यह खबर Navbharat Live द्वारा दी गई जानकारी पर</p>
     <a class="read-more" href="news/kd87569b12a.html">पढ़ें →</a>
   </div>
 </article>
-<article class="card" data-category="राजनीति">
-  <a class="card-image" href="news/k52420d6ed0.html"><div class="no-image">ख</div><span class="badge">राजनीति</span></a>
-  <div class="card-body">
-    <div class="meta"><span>Jagran</span><span class="dot">•</span><span>1 घंटे पहले</span></div>
-    <h3><a href="news/k52420d6ed0.html">&#x27;धर्म के नाम पर बांटने की राजनीति...&#x27;, BJP पर जमकर बरसे फारूक अब्दुल्ला; गिनाया उमर सरकार का रोडमैप - farooq abdullah lashed out at the bjp for divisive politics in the name of religion and outlined the omar governments fiveyear roa</a></h3>
-    <p>&#x27;धर्म के नाम पर बांटने की राजनीति...&#x27;, BJP पर जमकर बरसे फारूक अब्दुल्ला; गिनाया उमर सरकार का रोडमैप - farooq abdullah lashed out at the bjp for divisi</p>
-    <a class="read-more" href="news/k52420d6ed0.html">पढ़ें →</a>
-  </div>
-</article>
 <article class="card" data-category="खेल">
-  <a class="card-image" href="news/kca376cffea.html"><div class="no-image">ख</div><span class="badge">खेल</span></a>
+  <a class="card-image" href="news/kca376cffea.html"><img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">खेल</span></a>
   <div class="card-body">
-    <div class="meta"><span>AajTak</span><span class="dot">•</span><span>1 घंटे पहले</span></div>
+    <div class="meta"><span>AajTak</span><span class="dot">•</span><span>2 घंटे पहले</span></div>
     <h3><a href="news/kca376cffea.html">IND vs NZ 1st Test Day 3 Live Score: केएल राहुल ने काटा गदर! 136 रनों की पारी खेल न्यूजीलैंड के छुड़ाए छक्के, कप्तान गिल ने भी जड़ा अर्धशतक</a></h3>
     <p>IND vs NZ 1st Test Day 3 Live Score: केएल राहुल ने काटा गदर! 136 रनों की पारी खेल न्यूजीलैंड के छुड़ाए छक्के, कप्तान गिल ने भी जड़ा अर्धशतक — यह खबर A</p>
     <a class="read-more" href="news/kca376cffea.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="मनोरंजन">
-  <a class="card-image" href="news/k3f30ead05f.html"><div class="no-image">ख</div><span class="badge">मनोरंजन</span></a>
+  <a class="card-image" href="news/k3f30ead05f.html"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">मनोरंजन</span></a>
   <div class="card-body">
-    <div class="meta"><span>News On AIR</span><span class="dot">•</span><span>1 घंटे पहले</span></div>
+    <div class="meta"><span>News On AIR</span><span class="dot">•</span><span>2 घंटे पहले</span></div>
     <h3><a href="news/k3f30ead05f.html">गोवा में आज भारतीय अंतरराष्ट्रीय फिल्म महोत्सव-2026 के अंतर्गत भारतीय पैनोरमा खंड की शुरुआत होगी</a></h3>
     <p>गोवा में आज भारतीय अंतरराष्ट्रीय फिल्म महोत्सव-2026 के अंतर्गत भारतीय पैनोरमा खंड की शुरुआत होगी — यह खबर News On AIR द्वारा दी गई जानकारी पर आधारित ह</p>
     <a class="read-more" href="news/k3f30ead05f.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="राजनीति">
-  <a class="card-image" href="news/k0e7ab9f72e.html"><div class="no-image">ख</div><span class="badge">राजनीति</span></a>
+  <a class="card-image" href="news/k0e7ab9f72e.html"><img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">राजनीति</span></a>
   <div class="card-body">
-    <div class="meta"><span>Prabhat Khabar</span><span class="dot">•</span><span>1 घंटे पहले</span></div>
+    <div class="meta"><span>Prabhat Khabar</span><span class="dot">•</span><span>2 घंटे पहले</span></div>
     <h3><a href="news/k0e7ab9f72e.html">भारत की तारीफ कर ट्रंप ने फेडरल रिजर्व को घेरा, US GDP पर बड़ा दावा</a></h3>
     <p>भारत की तारीफ कर ट्रंप ने फेडरल रिजर्व को घेरा, US GDP पर बड़ा दावा — यह खबर Prabhat Khabar द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्रोत प</p>
     <a class="read-more" href="news/k0e7ab9f72e.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="व्यापार">
-  <a class="card-image" href="news/k8691458bb1.html"><div class="no-image">ख</div><span class="badge">व्यापार</span></a>
+  <a class="card-image" href="news/k8691458bb1.html"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">व्यापार</span></a>
   <div class="card-body">
-    <div class="meta"><span>Jagran</span><span class="dot">•</span><span>1 घंटे पहले</span></div>
+    <div class="meta"><span>Jagran</span><span class="dot">•</span><span>2 घंटे पहले</span></div>
     <h3><a href="news/k8691458bb1.html">Upcoming Dividend Stocks: 3 कंपनियां देने जा रही डिविडेंड, अगले हफ्ते है एक्स और रिकॉर्ड डेट; चूक न जाए मौका</a></h3>
     <p>Upcoming Dividend Stocks: 3 कंपनियां देने जा रही डिविडेंड, अगले हफ्ते है एक्स और रिकॉर्ड डेट; चूक न जाए मौका — यह खबर Jagran द्वारा दी गई जानकारी पर आ</p>
     <a class="read-more" href="news/k8691458bb1.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="देश">
-  <a class="card-image" href="news/k8a067910ee.html"><div class="no-image">ख</div><span class="badge">देश</span></a>
+  <a class="card-image" href="news/k8a067910ee.html"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">देश</span></a>
   <div class="card-body">
-    <div class="meta"><span>Facebook</span><span class="dot">•</span><span>1 घंटे पहले</span></div>
+    <div class="meta"><span>Facebook</span><span class="dot">•</span><span>2 घंटे पहले</span></div>
     <h3><a href="news/k8a067910ee.html">भारत के स्पेस प्रोग्राम की शुरुआत करने वाला रॉकेट, जिसने भारत को पहली बार &#x27;आसमान&#x27; तक पहुंचाया. देखिए उस रॉकेट की कहानी #BasEkMinute में. वीडियोः भरत शर्मा (@journobharatsharma ) और निमित वत्स (@</a></h3>
     <p>भारत के स्पेस प्रोग्राम की शुरुआत करने वाला रॉकेट, जिसने भारत को पहली बार &#x27;आसमान&#x27; तक पहुंचाया. देखिए उस रॉकेट की कहानी #BasEkMinute में. वीडियोः भरत श</p>
     <a class="read-more" href="news/k8a067910ee.html">पढ़ें →</a>
   </div>
 </article>
-<article class="card" data-category="देश">
-  <a class="card-image" href="news/k1f9063fcc7.html"><div class="no-image">ख</div><span class="badge">देश</span></a>
+<article class="card" data-category="खेल">
+  <a class="card-image" href="news/kd67882e106.html"><img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">खेल</span></a>
   <div class="card-body">
-    <div class="meta"><span>News On AIR</span><span class="dot">•</span><span>1 घंटे पहले</span></div>
-    <h3><a href="news/k1f9063fcc7.html">अमरीका के राष्ट्रपति डॉनल्ड ट्रंप ने भारत की कम ब्याज दरों और मजबूत आर्थिक वृद्धि की सराहना की</a></h3>
-    <p>अमरीका के राष्ट्रपति डॉनल्ड ट्रंप ने भारत की कम ब्याज दरों और मजबूत आर्थिक वृद्धि की सराहना की — यह खबर News On AIR द्वारा दी गई जानकारी पर आधारित है।</p>
-    <a class="read-more" href="news/k1f9063fcc7.html">पढ़ें →</a>
-  </div>
-</article>
-<article class="card" data-category="मनोरंजन">
-  <a class="card-image" href="news/ke499aad249.html"><div class="no-image">ख</div><span class="badge">मनोरंजन</span></a>
-  <div class="card-body">
-    <div class="meta"><span>ABP News</span><span class="dot">•</span><span>2 घंटे पहले</span></div>
-    <h3><a href="news/ke499aad249.html">रामायण के आगे धनुष की ओम का चला जादू, दमदार हुई शुरुआत, बनी 2026 की तमिल की चौथी सबसे</a></h3>
-    <p>रामायण के आगे धनुष की ओम का चला जादू, दमदार हुई शुरुआत, बनी 2026 की तमिल की चौथी सबसे — यह खबर ABP News द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार</p>
-    <a class="read-more" href="news/ke499aad249.html">पढ़ें →</a>
+    <div class="meta"><span>Navbharat Live</span><span class="dot">•</span><span>3 घंटे पहले</span></div>
+    <h3><a href="news/kd67882e106.html">भारत और न्यूजीलैंड खेल संबंधों के 100 साल पूरे, शुभमन गिल और टॉम लैथम की मौजूदगी में मना ऐतिहासिक जश्न</a></h3>
+    <p>भारत और न्यूजीलैंड खेल संबंधों के 100 साल पूरे, शुभमन गिल और टॉम लैथम की मौजूदगी में मना ऐतिहासिक जश्न — यह खबर Navbharat Live द्वारा दी गई जानकारी पर</p>
+    <a class="read-more" href="news/kd67882e106.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="देश">
-  <a class="card-image" href="news/kce2070ec08.html"><div class="no-image">ख</div><span class="badge">देश</span></a>
+  <a class="card-image" href="news/kce2070ec08.html"><img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">देश</span></a>
   <div class="card-body">
     <div class="meta"><span>BBC</span><span class="dot">•</span><span>3 घंटे पहले</span></div>
     <h3><a href="news/kce2070ec08.html">बालेन शाह के भारत दौरे को कैसे देख रहे हैं एक्सपर्ट्स</a></h3>
@@ -146,205 +215,151 @@
   </div>
 </article>
 <article class="card" data-category="राजनीति">
-  <a class="card-image" href="news/k9f67fb9e83.html"><div class="no-image">ख</div><span class="badge">राजनीति</span></a>
+  <a class="card-image" href="news/k9f67fb9e83.html"><img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">राजनीति</span></a>
   <div class="card-body">
-    <div class="meta"><span>Jagran</span><span class="dot">•</span><span>3 घंटे पहले</span></div>
+    <div class="meta"><span>Jagran</span><span class="dot">•</span><span>4 घंटे पहले</span></div>
     <h3><a href="news/k9f67fb9e83.html">&#x27;उन्हें भू-राजनीति की समझ नहीं&#x27;: भाजपा ने राहुल गांधी को घेरा, कहा- वे लगातार पाकिस्तान की भाषा बोल रहे हैं</a></h3>
     <p>&#x27;उन्हें भू-राजनीति की समझ नहीं&#x27;: भाजपा ने राहुल गांधी को घेरा, कहा- वे लगातार पाकिस्तान की भाषा बोल रहे हैं — यह खबर Jagran द्वारा दी गई जानकारी पर आध</p>
     <a class="read-more" href="news/k9f67fb9e83.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="खेल">
-  <a class="card-image" href="news/k7c6bf07bb3.html"><div class="no-image">ख</div><span class="badge">खेल</span></a>
+  <a class="card-image" href="news/k7c6bf07bb3.html"><img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">खेल</span></a>
   <div class="card-body">
-    <div class="meta"><span>ABP News</span><span class="dot">•</span><span>3 घंटे पहले</span></div>
+    <div class="meta"><span>ABP News</span><span class="dot">•</span><span>5 घंटे पहले</span></div>
     <h3><a href="news/k7c6bf07bb3.html">एशिया कप में भारत-पाकिस्तान मैच रद्द, पाक ब्लाइंड टीम को मिली ट्रॉफी, भारतीय टीम ने किया विरोध</a></h3>
     <p>एशिया कप में भारत-पाकिस्तान मैच रद्द, पाक ब्लाइंड टीम को मिली ट्रॉफी, भारतीय टीम ने किया विरोध — यह खबर ABP News द्वारा दी गई जानकारी पर आधारित है। पू</p>
     <a class="read-more" href="news/k7c6bf07bb3.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="देश">
-  <a class="card-image" href="news/k00da2be83b.html"><div class="no-image">ख</div><span class="badge">देश</span></a>
+  <a class="card-image" href="news/kbad1cf060e.html"><img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">देश</span></a>
   <div class="card-body">
-    <div class="meta"><span>www.presidentofindia.gov.in</span><span class="dot">•</span><span>3 घंटे पहले</span></div>
-    <h3><a href="news/k00da2be83b.html">भारत की राष्ट्रपति श्रीमती द्रौपदी मुर्मु का श्री राम कॉलेज ऑफ कॉमर्स के शताब्दी समारोह के समापन पर संबोधन (HINDI)</a></h3>
-    <p>भारत की राष्ट्रपति श्रीमती द्रौपदी मुर्मु का श्री राम कॉलेज ऑफ कॉमर्स के शताब्दी समारोह के समापन पर संबोधन (HINDI) — यह खबर www.presidentofindia.gov.i</p>
-    <a class="read-more" href="news/k00da2be83b.html">पढ़ें →</a>
-  </div>
-</article>
-<article class="card" data-category="देश">
-  <a class="card-image" href="news/kbad1cf060e.html"><div class="no-image">ख</div><span class="badge">देश</span></a>
-  <div class="card-body">
-    <div class="meta"><span>pib.gov.in</span><span class="dot">•</span><span>4 घंटे पहले</span></div>
+    <div class="meta"><span>pib.gov.in</span><span class="dot">•</span><span>6 घंटे पहले</span></div>
     <h3><a href="news/kbad1cf060e.html">भारत की रक्षा शक्ति</a></h3>
     <p>भारत की रक्षा शक्ति — यह खबर pib.gov.in द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्रोत पर जाएँ।</p>
     <a class="read-more" href="news/kbad1cf060e.html">पढ़ें →</a>
   </div>
 </article>
-<article class="card" data-category="राजनीति">
-  <a class="card-image" href="news/k76c6866f7d.html"><div class="no-image">ख</div><span class="badge">राजनीति</span></a>
-  <div class="card-body">
-    <div class="meta"><span>Dainik Bhaskar</span><span class="dot">•</span><span>4 घंटे पहले</span></div>
-    <h3><a href="news/k76c6866f7d.html">BJP बोली- खेल पर राजनीति न करें; न्यूजीलैंड के खिलाफ पहले टेस्ट में मौका नहीं मिला</a></h3>
-    <p>BJP बोली- खेल पर राजनीति न करें; न्यूजीलैंड के खिलाफ पहले टेस्ट में मौका नहीं मिला — यह खबर Dainik Bhaskar द्वारा दी गई जानकारी पर आधारित है। पूरा समा</p>
-    <a class="read-more" href="news/k76c6866f7d.html">पढ़ें →</a>
-  </div>
-</article>
 <article class="card" data-category="देश">
-  <a class="card-image" href="news/k5c5ff95c76.html"><div class="no-image">ख</div><span class="badge">देश</span></a>
+  <a class="card-image" href="news/k5c5ff95c76.html"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">देश</span></a>
   <div class="card-body">
-    <div class="meta"><span>Cricinfo</span><span class="dot">•</span><span>9 घंटे पहले</span></div>
+    <div class="meta"><span>Cricinfo</span><span class="dot">•</span><span>11 घंटे पहले</span></div>
     <h3><a href="news/k5c5ff95c76.html">IND-A vs नेपाल चौथा मैच, ग्रुप बी - भारत ए की 306 रन से जीत</a></h3>
     <p>IND-A vs नेपाल चौथा मैच, ग्रुप बी - भारत ए की 306 रन से जीत — यह खबर Cricinfo द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्रोत पर जाएँ।</p>
     <a class="read-more" href="news/k5c5ff95c76.html">पढ़ें →</a>
   </div>
 </article>
-<article class="card" data-category="खेल">
-  <a class="card-image" href="news/kec77c15671.html"><div class="no-image">ख</div><span class="badge">खेल</span></a>
+<article class="card" data-category="टेक्नोलॉजी">
+  <a class="card-image" href="news/ka8f7f3d648.html"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">टेक्नोलॉजी</span></a>
   <div class="card-body">
-    <div class="meta"><span>DD News</span><span class="dot">•</span><span>9 घंटे पहले</span></div>
-    <h3><a href="news/kec77c15671.html">भारत को वैश्विक खेल अर्थव्यवस्था बनाने का लक्ष्य, मनसुख मांडविया ने उद्योग जगत से मांगा सहयोग</a></h3>
-    <p>भारत को वैश्विक खेल अर्थव्यवस्था बनाने का लक्ष्य, मनसुख मांडविया ने उद्योग जगत से मांगा सहयोग — यह खबर DD News द्वारा दी गई जानकारी पर आधारित है। पूरा</p>
-    <a class="read-more" href="news/kec77c15671.html">पढ़ें →</a>
+    <div class="meta"><span>DD News</span><span class="dot">•</span><span>11 घंटे पहले</span></div>
+    <h3><a href="news/ka8f7f3d648.html">भारत को अपनी AI यात्रा खुद तय करनी चाहिए, न कि इसे अपने-आप तय होने दें: आरबीआई गवर्नर</a></h3>
+    <p>भारत को अपनी AI यात्रा खुद तय करनी चाहिए, न कि इसे अपने-आप तय होने दें: आरबीआई गवर्नर — यह खबर DD News द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार </p>
+    <a class="read-more" href="news/ka8f7f3d648.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="व्यापार">
-  <a class="card-image" href="news/ke597b0b45c.html"><div class="no-image">ख</div><span class="badge">व्यापार</span></a>
+  <a class="card-image" href="news/ka529d12317.html"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">व्यापार</span></a>
   <div class="card-body">
-    <div class="meta"><span>DD News</span><span class="dot">•</span><span>9 घंटे पहले</span></div>
-    <h3><a href="news/ke597b0b45c.html">कमजोर वैश्विक संकेतों के बीच लाल निशान में खुला शेयर बाजार, सेंसेक्स-निफ्टी में 1 प्रतिशत की गिरावट</a></h3>
-    <p>कमजोर वैश्विक संकेतों के बीच लाल निशान में खुला शेयर बाजार, सेंसेक्स-निफ्टी में 1 प्रतिशत की गिरावट — यह खबर DD News द्वारा दी गई जानकारी पर आधारित है</p>
-    <a class="read-more" href="news/ke597b0b45c.html">पढ़ें →</a>
-  </div>
-</article>
-<article class="card" data-category="व्यापार">
-  <a class="card-image" href="news/ka529d12317.html"><div class="no-image">ख</div><span class="badge">व्यापार</span></a>
-  <div class="card-body">
-    <div class="meta"><span>DD News</span><span class="dot">•</span><span>10 घंटे पहले</span></div>
+    <div class="meta"><span>DD News</span><span class="dot">•</span><span>11 घंटे पहले</span></div>
     <h3><a href="news/ka529d12317.html">एफआईआई की लगातार खरीदारी से शेयर बाजार को सहारा, सेंसेक्स-निफ्टी में तीसरे सप्ताह भी बढ़त</a></h3>
     <p>एफआईआई की लगातार खरीदारी से शेयर बाजार को सहारा, सेंसेक्स-निफ्टी में तीसरे सप्ताह भी बढ़त — यह खबर DD News द्वारा दी गई जानकारी पर आधारित है। पूरा समा</p>
     <a class="read-more" href="news/ka529d12317.html">पढ़ें →</a>
   </div>
 </article>
-<article class="card" data-category="मनोरंजन">
-  <a class="card-image" href="news/k645ecc0a18.html"><div class="no-image">ख</div><span class="badge">मनोरंजन</span></a>
+<article class="card" data-category="व्यापार">
+  <a class="card-image" href="news/ke21eed0118.html"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">व्यापार</span></a>
   <div class="card-body">
-    <div class="meta"><span>pib.gov.in</span><span class="dot">•</span><span>11 घंटे पहले</span></div>
-    <h3><a href="news/k645ecc0a18.html">राष्ट्रीय फिल्म पुरस्कार</a></h3>
-    <p>राष्ट्रीय फिल्म पुरस्कार — यह खबर pib.gov.in द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्रोत पर जाएँ।</p>
-    <a class="read-more" href="news/k645ecc0a18.html">पढ़ें →</a>
+    <div class="meta"><span>DD News</span><span class="dot">•</span><span>11 घंटे पहले</span></div>
+    <h3><a href="news/ke21eed0118.html">दीपावली पर रविवार को खुलेगा शेयर बाजार, एनएसई-बीएसई में मुहूर्त ट्रेडिंग का एक घंटे का विशेष सत्र</a></h3>
+    <p>दीपावली पर रविवार को खुलेगा शेयर बाजार, एनएसई-बीएसई में मुहूर्त ट्रेडिंग का एक घंटे का विशेष सत्र — यह खबर DD News द्वारा दी गई जानकारी पर आधारित है। </p>
+    <a class="read-more" href="news/ke21eed0118.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="खेल">
-  <a class="card-image" href="news/k46cc5767e0.html"><div class="no-image">ख</div><span class="badge">खेल</span></a>
+  <a class="card-image" href="news/k46cc5767e0.html"><img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">खेल</span></a>
   <div class="card-body">
-    <div class="meta"><span>Navbharat Live</span><span class="dot">•</span><span>11 घंटे पहले</span></div>
+    <div class="meta"><span>Navbharat Live</span><span class="dot">•</span><span>12 घंटे पहले</span></div>
     <h3><a href="news/k46cc5767e0.html">India A vs Nepal: 26 रन पर ऑलआउट हुई नेपाल की टीम, फिर भी ODI का सबसे छोटा स्कोर क्यों नहीं बना?</a></h3>
     <p>India A vs Nepal: 26 रन पर ऑलआउट हुई नेपाल की टीम, फिर भी ODI का सबसे छोटा स्कोर क्यों नहीं बना? — यह खबर Navbharat Live द्वारा दी गई जानकारी पर आधारि</p>
     <a class="read-more" href="news/k46cc5767e0.html">पढ़ें →</a>
   </div>
 </article>
-<article class="card" data-category="मनोरंजन">
-  <a class="card-image" href="news/k3fe572c599.html"><div class="no-image">ख</div><span class="badge">मनोरंजन</span></a>
-  <div class="card-body">
-    <div class="meta"><span>Jagran</span><span class="dot">•</span><span>12 घंटे पहले</span></div>
-    <h3><a href="news/k3fe572c599.html">16वें दिन Ramayana पर बरसी लक्ष्मी कृपा, शुक्रवार को रणबीर कपूर की एपिक फिल्म ने छापे करोड़ों</a></h3>
-    <p>16वें दिन Ramayana पर बरसी लक्ष्मी कृपा, शुक्रवार को रणबीर कपूर की एपिक फिल्म ने छापे करोड़ों — यह खबर Jagran द्वारा दी गई जानकारी पर आधारित है। पूरा </p>
-    <a class="read-more" href="news/k3fe572c599.html">पढ़ें →</a>
-  </div>
-</article>
 <article class="card" data-category="खेल">
-  <a class="card-image" href="news/ka2fc0c8c82.html"><div class="no-image">ख</div><span class="badge">खेल</span></a>
+  <a class="card-image" href="news/ka2fc0c8c82.html"><img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">खेल</span></a>
   <div class="card-body">
-    <div class="meta"><span>India TV Hindi</span><span class="dot">•</span><span>12 घंटे पहले</span></div>
+    <div class="meta"><span>India TV Hindi</span><span class="dot">•</span><span>14 घंटे पहले</span></div>
     <h3><a href="news/ka2fc0c8c82.html">इंडिया A ने रचा इतिहास, नेपाल को 306 रन से रौंदकर लिस्ट A क्रिकेट में दर्ज की अपनी सबसे बड़ी जीत</a></h3>
     <p>इंडिया A ने रचा इतिहास, नेपाल को 306 रन से रौंदकर लिस्ट A क्रिकेट में दर्ज की अपनी सबसे बड़ी जीत — यह खबर India TV Hindi द्वारा दी गई जानकारी पर आधारि</p>
     <a class="read-more" href="news/ka2fc0c8c82.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="खेल">
-  <a class="card-image" href="news/k5796d4a133.html"><div class="no-image">ख</div><span class="badge">खेल</span></a>
+  <a class="card-image" href="news/k5796d4a133.html"><img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">खेल</span></a>
   <div class="card-body">
-    <div class="meta"><span>Jagran</span><span class="dot">•</span><span>12 घंटे पहले</span></div>
+    <div class="meta"><span>Jagran</span><span class="dot">•</span><span>14 घंटे पहले</span></div>
     <h3><a href="news/k5796d4a133.html">ब्लाइंड क्रिकेट एशिया कप में पाकिस्तान को चैंपियन बनाने पर बवाल, फाइनल खेले बिना ही दे दिया खिताब; भारत ने दी चेतावनी - blind cricket asia cup controversy pakistan declared champions without even playing final indi</a></h3>
     <p>ब्लाइंड क्रिकेट एशिया कप में पाकिस्तान को चैंपियन बनाने पर बवाल, फाइनल खेले बिना ही दे दिया खिताब; भारत ने दी चेतावनी - blind cricket asia cup controv</p>
     <a class="read-more" href="news/k5796d4a133.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="व्यापार">
-  <a class="card-image" href="news/k82beb76d34.html"><div class="no-image">ख</div><span class="badge">व्यापार</span></a>
+  <a class="card-image" href="news/k036fabce84.html"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">व्यापार</span></a>
   <div class="card-body">
-    <div class="meta"><span>Upstox</span><span class="dot">•</span><span>14 घंटे पहले</span></div>
-    <h3><a href="news/k82beb76d34.html">लगातार चौथे हफ्ते शेयर बाजार में रही तेजी की बहार, सेंसेक्स 2,327 अंक उछला, जानिए अगले हफ्ते कैसी रहेगी चाल?</a></h3>
-    <p>लगातार चौथे हफ्ते शेयर बाजार में रही तेजी की बहार, सेंसेक्स 2,327 अंक उछला, जानिए अगले हफ्ते कैसी रहेगी चाल? — यह खबर Upstox द्वारा दी गई जानकारी पर आ</p>
-    <a class="read-more" href="news/k82beb76d34.html">पढ़ें →</a>
-  </div>
-</article>
-<article class="card" data-category="व्यापार">
-  <a class="card-image" href="news/k036fabce84.html"><div class="no-image">ख</div><span class="badge">व्यापार</span></a>
-  <div class="card-body">
-    <div class="meta"><span>Facebook</span><span class="dot">•</span><span>15 घंटे पहले</span></div>
+    <div class="meta"><span>Facebook</span><span class="dot">•</span><span>16 घंटे पहले</span></div>
     <h3><a href="news/k036fabce84.html">Zee Business. . Bazaar Agle Hafte | अगले हफ्ते कैसा होगा बाजार का मूड, बाजार में कहां है कमाई का मौका? #ShareMarket #StockMarket #Trader</a></h3>
     <p>Zee Business. . Bazaar Agle Hafte | अगले हफ्ते कैसा होगा बाजार का मूड, बाजार में कहां है कमाई का मौका? #ShareMarket #StockMarket #Trader — यह खबर Face</p>
     <a class="read-more" href="news/k036fabce84.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="दुनिया">
-  <a class="card-image" href="news/kad78af3848.html"><div class="no-image">ख</div><span class="badge">दुनिया</span></a>
+  <a class="card-image" href="news/kad78af3848.html"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">दुनिया</span></a>
   <div class="card-body">
-    <div class="meta"><span>NHKニュース</span><span class="dot">•</span><span>15 घंटे पहले</span></div>
+    <div class="meta"><span>NHKニュース</span><span class="dot">•</span><span>17 घंटे पहले</span></div>
     <h3><a href="news/kad78af3848.html">3 विश्व शक्तियों ने दिखायी वैश्विक महत्वाकांक्षा</a></h3>
     <p>3 विश्व शक्तियों ने दिखायी वैश्विक महत्वाकांक्षा — यह खबर NHKニュース द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्रोत पर जाएँ।</p>
     <a class="read-more" href="news/kad78af3848.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="व्यापार">
-  <a class="card-image" href="news/kee6e06d818.html"><div class="no-image">ख</div><span class="badge">व्यापार</span></a>
+  <a class="card-image" href="news/kee6e06d818.html"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">व्यापार</span></a>
   <div class="card-body">
-    <div class="meta"><span>Navbharat Live</span><span class="dot">•</span><span>17 घंटे पहले</span></div>
+    <div class="meta"><span>Navbharat Live</span><span class="dot">•</span><span>18 घंटे पहले</span></div>
     <h3><a href="news/kee6e06d818.html">Share Market: बाजार में लगातार दूसरे दिन जोरदार तेजी, 898 अंक उछलकर बंद हुआ सेंसेक्स; निफ्टी 25,800 के पार</a></h3>
     <p>Share Market: बाजार में लगातार दूसरे दिन जोरदार तेजी, 898 अंक उछलकर बंद हुआ सेंसेक्स; निफ्टी 25,800 के पार — यह खबर Navbharat Live द्वारा दी गई जानकार</p>
     <a class="read-more" href="news/kee6e06d818.html">पढ़ें →</a>
   </div>
 </article>
-<article class="card" data-category="टेक्नोलॉजी">
-  <a class="card-image" href="news/k3440456594.html"><div class="no-image">ख</div><span class="badge">टेक्नोलॉजी</span></a>
-  <div class="card-body">
-    <div class="meta"><span>DD News</span><span class="dot">•</span><span>17 घंटे पहले</span></div>
-    <h3><a href="news/k3440456594.html">SEMICON इंडिया 2026 में L&amp;T सीईओ बोले- ‘भारत में सेमीकंडक्टर ग्रोथ के लिए आधार तैयार, ग्लोबल मार्केट समझ बढ़ानी होगी’</a></h3>
-    <p>SEMICON इंडिया 2026 में L&amp;T सीईओ बोले- ‘भारत में सेमीकंडक्टर ग्रोथ के लिए आधार तैयार, ग्लोबल मार्केट समझ बढ़ानी होगी’ — यह खबर DD News द्वारा दी गई जा</p>
-    <a class="read-more" href="news/k3440456594.html">पढ़ें →</a>
-  </div>
-</article>
 <article class="card" data-category="दुनिया">
-  <a class="card-image" href="news/k35d93c6c02.html"><div class="no-image">ख</div><span class="badge">दुनिया</span></a>
+  <a class="card-image" href="news/k35d93c6c02.html"><img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">दुनिया</span></a>
   <div class="card-body">
-    <div class="meta"><span>Vietnam.vn</span><span class="dot">•</span><span>18 घंटे पहले</span></div>
+    <div class="meta"><span>Vietnam.vn</span><span class="dot">•</span><span>19 घंटे पहले</span></div>
     <h3><a href="news/k35d93c6c02.html">[वीडियो] विश्व समाचार 20/11: अमेरिकी सीनेट ने ईरान पर हमलों को सीमित करने वाले प्रस्ताव को खारिज किया; दक्षिण कोरिया ने कृत्रिम बुद्धिमत्ता से मिलने वाली स्वास्थ्य सलाह के प्रति आगाह क</a></h3>
     <p>[वीडियो] विश्व समाचार 20/11: अमेरिकी सीनेट ने ईरान पर हमलों को सीमित करने वाले प्रस्ताव को खारिज किया; दक्षिण कोरिया ने कृत्रिम बुद्धिमत्ता से मिलने व</p>
     <a class="read-more" href="news/k35d93c6c02.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="दुनिया">
-  <a class="card-image" href="news/k7bfc911251.html"><div class="no-image">ख</div><span class="badge">दुनिया</span></a>
+  <a class="card-image" href="news/k47442dced6.html"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">दुनिया</span></a>
   <div class="card-body">
-    <div class="meta"><span>DD News</span><span class="dot">•</span><span>18 घंटे पहले</span></div>
-    <h3><a href="news/k7bfc911251.html">अंतर्राष्ट्रीय मजदूर दिवस: संघर्ष, सम्मान और अधिकारों की कहानी</a></h3>
-    <p>अंतर्राष्ट्रीय मजदूर दिवस: संघर्ष, सम्मान और अधिकारों की कहानी — यह खबर DD News द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्रोत पर जाएँ।</p>
-    <a class="read-more" href="news/k7bfc911251.html">पढ़ें →</a>
+    <div class="meta"><span>AajTak</span><span class="dot">•</span><span>19 घंटे पहले</span></div>
+    <h3><a href="news/k47442dced6.html">क्या जिनपिंग ने ट्रंप के लिए पुतिन को नजरअंदाज किया? क्या कहती हैं तस्वीरें</a></h3>
+    <p>क्या जिनपिंग ने ट्रंप के लिए पुतिन को नजरअंदाज किया? क्या कहती हैं तस्वीरें — यह खबर AajTak द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्रोत प</p>
+    <a class="read-more" href="news/k47442dced6.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="टेक्नोलॉजी">
-  <a class="card-image" href="news/kb81c13dade.html"><div class="no-image">ख</div><span class="badge">टेक्नोलॉजी</span></a>
+  <a class="card-image" href="news/kb81c13dade.html"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">टेक्नोलॉजी</span></a>
   <div class="card-body">
-    <div class="meta"><span>DD News</span><span class="dot">•</span><span>18 घंटे पहले</span></div>
+    <div class="meta"><span>DD News</span><span class="dot">•</span><span>20 घंटे पहले</span></div>
     <h3><a href="news/kb81c13dade.html">डीपफेक पर सरकार सख्त, AI जनित फर्जी कंटेंट हटाने के लिए कड़े नियम लागू</a></h3>
     <p>डीपफेक पर सरकार सख्त, AI जनित फर्जी कंटेंट हटाने के लिए कड़े नियम लागू — यह खबर DD News द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्रोत पर जा</p>
     <a class="read-more" href="news/kb81c13dade.html">पढ़ें →</a>
   </div>
 </article>
 <article class="card" data-category="टेक्नोलॉजी">
-  <a class="card-image" href="news/kae8b88de3e.html"><div class="no-image">ख</div><span class="badge">टेक्नोलॉजी</span></a>
+  <a class="card-image" href="news/kae8b88de3e.html"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">टेक्नोलॉजी</span></a>
   <div class="card-body">
     <div class="meta"><span>Navbharat Live</span><span class="dot">•</span><span>20 Nov 2026</span></div>
     <h3><a href="news/kae8b88de3e.html">नवभारत विशेष: क्या इंसानों के नियंत्रण से बाहर हो सकता है एजेंटिक आर्टिफिशियल इंटेलिजेंस?</a></h3>
@@ -353,25 +368,7 @@
   </div>
 </article>
 <article class="card" data-category="दुनिया">
-  <a class="card-image" href="news/k694bead1cd.html"><div class="no-image">ख</div><span class="badge">दुनिया</span></a>
-  <div class="card-body">
-    <div class="meta"><span>Traders Union</span><span class="dot">•</span><span>20 Nov 2026</span></div>
-    <h3><a href="news/k694bead1cd.html">विश्व बैंक ने लाइबेरिया की वन अर्थव्यवस्था परियोजना के लिए 45.4 मिलियन डॉलर मंज़ूर किए</a></h3>
-    <p>विश्व बैंक ने लाइबेरिया की वन अर्थव्यवस्था परियोजना के लिए 45.4 मिलियन डॉलर मंज़ूर किए — यह खबर Traders Union द्वारा दी गई जानकारी पर आधारित है। पूरा </p>
-    <a class="read-more" href="news/k694bead1cd.html">पढ़ें →</a>
-  </div>
-</article>
-<article class="card" data-category="टेक्नोलॉजी">
-  <a class="card-image" href="news/ke91bc9871c.html"><div class="no-image">ख</div><span class="badge">टेक्नोलॉजी</span></a>
-  <div class="card-body">
-    <div class="meta"><span>pib.gov.in</span><span class="dot">•</span><span>20 Nov 2026</span></div>
-    <h3><a href="news/ke91bc9871c.html">माय भारत– डिजिटल इंडिया और युवा भारत का संगम</a></h3>
-    <p>माय भारत– डिजिटल इंडिया और युवा भारत का संगम — यह खबर pib.gov.in द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्रोत पर जाएँ।</p>
-    <a class="read-more" href="news/ke91bc9871c.html">पढ़ें →</a>
-  </div>
-</article>
-<article class="card" data-category="दुनिया">
-  <a class="card-image" href="news/k5a6a9eeb56.html"><div class="no-image">ख</div><span class="badge">दुनिया</span></a>
+  <a class="card-image" href="news/k5a6a9eeb56.html"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">दुनिया</span></a>
   <div class="card-body">
     <div class="meta"><span>Vatican News</span><span class="dot">•</span><span>19 Nov 2026</span></div>
     <h3><a href="news/k5a6a9eeb56.html">विश्व युवा दिवस 2027 का आधिकारिक गीत, सांकेतिक भाषा के संस्करण के साथ</a></h3>
@@ -380,7 +377,16 @@
   </div>
 </article>
 <article class="card" data-category="टेक्नोलॉजी">
-  <a class="card-image" href="news/k36d1c46395.html"><div class="no-image">ख</div><span class="badge">टेक्नोलॉजी</span></a>
+  <a class="card-image" href="news/k61b03549d1.html"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">टेक्नोलॉजी</span></a>
+  <div class="card-body">
+    <div class="meta"><span>ABP News</span><span class="dot">•</span><span>19 Nov 2026</span></div>
+    <h3><a href="news/k61b03549d1.html">Satya Nadella: सिर्फ AI से नहीं चल सकती दुनिया, सत्य नडेला ने दी बड़ी चेतावनी</a></h3>
+    <p>Satya Nadella: सिर्फ AI से नहीं चल सकती दुनिया, सत्य नडेला ने दी बड़ी चेतावनी — यह खबर ABP News द्वारा दी गई जानकारी पर आधारित है। पूरा समाचार मूल स्र</p>
+    <a class="read-more" href="news/k61b03549d1.html">पढ़ें →</a>
+  </div>
+</article>
+<article class="card" data-category="टेक्नोलॉजी">
+  <a class="card-image" href="news/k36d1c46395.html"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">टेक्नोलॉजी</span></a>
   <div class="card-body">
     <div class="meta"><span>AajTak</span><span class="dot">•</span><span>19 Nov 2026</span></div>
     <h3><a href="news/k36d1c46395.html">लखनऊ में विकसित होगी AI सिटी, टेक्नोलॉजी और रोजगार के खुलेंगे नए अवसर</a></h3>
@@ -388,13 +394,22 @@
     <a class="read-more" href="news/k36d1c46395.html">पढ़ें →</a>
   </div>
 </article>
-<article class="card" data-category="दुनिया">
-  <a class="card-image" href="news/k036cbeddc7.html"><div class="no-image">ख</div><span class="badge">दुनिया</span></a>
+<article class="card" data-category="राजनीति">
+  <a class="card-image" href="news/kc8598c2643.html"><img src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">राजनीति</span></a>
   <div class="card-body">
-    <div class="meta"><span>Prabhat Khabar</span><span class="dot">•</span><span>19 Nov 2026</span></div>
-    <h3><a href="news/k036cbeddc7.html">UP News: विश्व शौचालय दिवस पर खुली स्वच्छता व्यवस्था की पोल, गांवों में सामुदायिक शौचालयों पर लटके ताले</a></h3>
-    <p>UP News: विश्व शौचालय दिवस पर खुली स्वच्छता व्यवस्था की पोल, गांवों में सामुदायिक शौचालयों पर लटके ताले — यह खबर Prabhat Khabar द्वारा दी गई जानकारी प</p>
-    <a class="read-more" href="news/k036cbeddc7.html">पढ़ें →</a>
+    <div class="meta"><span>Facebook</span><span class="dot">•</span><span>19 Nov 2026</span></div>
+    <h3><a href="news/kc8598c2643.html">सोनिया गांधी ने अपनी किताब के ज़रिए क्या बताने की कोशिश की है? सोनिया गांधी की किताब &#x27;बिलॉन्गिंग: अ जर्नी ऑफ़ लव&#x27; ने भारतीय राजनीति में नई बहस छेड़ दी है. इटली से भारत आने, राजीव गांधी</a></h3>
+    <p>सोनिया गांधी ने अपनी किताब के ज़रिए क्या बताने की कोशिश की है? सोनिया गांधी की किताब &#x27;बिलॉन्गिंग: अ जर्नी ऑफ़ लव&#x27; ने भारतीय राजनीति में नई बहस छेड़ दी</p>
+    <a class="read-more" href="news/kc8598c2643.html">पढ़ें →</a>
+  </div>
+</article>
+<article class="card" data-category="टेक्नोलॉजी">
+  <a class="card-image" href="news/k09b37c7455.html"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="" loading="lazy" onerror="this.style.display='none'"><span class="badge">टेक्नोलॉजी</span></a>
+  <div class="card-body">
+    <div class="meta"><span>Vietnam.vn</span><span class="dot">•</span><span>19 Nov 2026</span></div>
+    <h3><a href="news/k09b37c7455.html">आर्टिफिशियल इंटेलिजेंस के &quot;जनक&quot; क्लाउड ने अभी हाल ही में मानव इतिहास का सबसे बड़ा आईपीओ जारी किया है।</a></h3>
+    <p>आर्टिफिशियल इंटेलिजेंस के &quot;जनक&quot; क्लाउड ने अभी हाल ही में मानव इतिहास का सबसे बड़ा आईपीओ जारी किया है। — यह खबर Vietnam.vn द्वारा दी गई जानकारी पर आधार</p>
+    <a class="read-more" href="news/k09b37c7455.html">पढ़ें →</a>
   </div>
 </article>
       </div>
@@ -403,12 +418,12 @@
     <aside class="sidebar">
       <div class="side-box">
         <h3>🔴 ट्रेंडिंग</h3>
-        <ol class="trending"><li><span>1</span><a href="news/kdf8798965e.html">बॉलीवुड एक्ट्रेस कियारा आडवाणी मुंबई में पति सिद्धार्थ मल्होत्रा के साथ स्पॉट हुईं. दोनों </a></li>
-<li><span>2</span><a href="news/kab5be8720b.html">राजस्थान की ग्रामीण राजनीति में कांग्रेस का दबदबा, परिषद से लेकर पंचायत समिति तक बीजेपी हा</a></li>
-<li><span>3</span><a href="news/kd87569b12a.html">गोवा में 57वें अंतरराष्ट्रीय फिल्म महोत्सव IFFI का भव्य आगाज, रवि किशन और प्रमोद सावंत ने </a></li>
-<li><span>4</span><a href="news/k52420d6ed0.html">&#x27;धर्म के नाम पर बांटने की राजनीति...&#x27;, BJP पर जमकर बरसे फारूक अब्दुल्ला; गिनाया उमर सरकार </a></li>
-<li><span>5</span><a href="news/kca376cffea.html">IND vs NZ 1st Test Day 3 Live Score: केएल राहुल ने काटा गदर! 136 रनों की पारी खेल न्यूजीलै</a></li>
-<li><span>6</span><a href="news/k3f30ead05f.html">गोवा में आज भारतीय अंतरराष्ट्रीय फिल्म महोत्सव-2026 के अंतर्गत भारतीय पैनोरमा खंड की शुरुआ</a></li></ol>
+        <ol class="trending"><li><span>1</span><a href="news/k946c3159d3.html">ओवरसीज में बॉलीवुड की टॉप 10 हाईएस्ट ग्रॉसिंग फिल्में, जानें- कौन से नंबर पर है रामायण ?</a></li>
+<li><span>2</span><a href="news/kd926ae5e64.html">हेमांग-जोशी ने सपा पर गुंडाराज की राजनीति का आरोप लगाया: बोले- अखिलेश जेसीबी हादसे के पीड़</a></li>
+<li><span>3</span><a href="news/k24f157852c.html">पश्चिम त्रिपुरा जिले में भारत-बांग्लादेश अंतरराष्ट्रीय सीमा से सटे क्षेत्रों में रात के सम</a></li>
+<li><span>4</span><a href="news/k949aa7a97e.html">भारत में कारोबार करें, राजनीति नहीं, META पर क्यों भड़के अखिलेश यादव?</a></li>
+<li><span>5</span><a href="news/k312dc3b09e.html">ब्याज दरों के दबाव और शेयर बाजार में भारी बिकवाली के कारण सोने की कीमतें 14 महीनों के निचल</a></li>
+<li><span>6</span><a href="news/kae01f1912a.html">Om Box Office Collection: धनुष की नई फिल्म ने पहले दिन ही दिखाया दम, तोड़ा अपना ही पुराना </a></li></ol>
       </div>
       <div class="side-box about-box">
         <h3>हमारे बारे में</h3>
