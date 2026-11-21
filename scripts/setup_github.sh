@@ -11,8 +11,20 @@ REPO="${GITHUB_REPO:-}"
 [[ -z "$USERNAME" ]] && read -rp "GitHub username: " USERNAME
 [[ -z "$REPO" ]] && read -rp "Repo name (e.g. hindi-news): " REPO
 echo "Username: $USERNAME | Repo: $REPO"
-read -rsp "Personal Access Token (likhte waqt nahi dikhega): " TOKEN
-echo ""
+# Token kabhi chat me na bhejein. Ya to interactive prompt (chhupa hua),
+# ya kisi local file se padho: GITHUB_TOKEN_FILE=/path/to/token
+TOKEN="${GITHUB_TOKEN:-}"
+if [[ -z "$TOKEN" && -n "${GITHUB_TOKEN_FILE:-}" && -f "$GITHUB_TOKEN_FILE" ]]; then
+  TOKEN="$(tr -d '\r\n' < "$GITHUB_TOKEN_FILE")"
+fi
+if [[ -z "$TOKEN" ]]; then
+  read -rsp "Personal Access Token (likhte waqt nahi dikhega): " TOKEN
+  echo ""
+fi
+if [[ -z "$TOKEN" ]]; then
+  echo "Token khali hai — setup rok diya gaya." >&2
+  exit 1
+fi
 read -rp "Vercel URL (abhi nahi hai to bas Enter dabayein): " SITE_URL
 SITE_URL="${SITE_URL:-https://example.vercel.app}"
 
