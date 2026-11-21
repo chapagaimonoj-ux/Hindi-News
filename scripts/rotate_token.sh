@@ -8,8 +8,14 @@ cd "$DIR"
 USERNAME="${GITHUB_USER:-chapagaimonoj-ux}"
 REPO="${GITHUB_REPO:-Hindi-News}"
 
-read -rsp "Naya GitHub token (chhupa hua): " TOKEN
-echo ""
+TOKEN="${GITHUB_TOKEN:-}"
+if [[ -z "$TOKEN" && -n "${GITHUB_TOKEN_FILE:-}" && -f "$GITHUB_TOKEN_FILE" ]]; then
+  TOKEN="$(tr -d '\r\n' < "$GITHUB_TOKEN_FILE")"
+fi
+if [[ -z "$TOKEN" ]]; then
+  read -rsp "Naya GitHub token (chhupa hua): " TOKEN
+  echo ""
+fi
 if [[ -z "$TOKEN" ]]; then
   echo "Token khali hai!" >&2
   exit 1
